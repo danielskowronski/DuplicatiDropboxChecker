@@ -2,8 +2,8 @@
 import sys
 from dropbox import Dropbox
 
-def print_result(alias, date):
-    print("dropbox_duplicati_latest_file_%s %d" % (path, date))
+def print_result(sufix, date):
+    print("dropbox_duplicati_latest_file_%s %d" % (sufix, date))
 
 if len(sys.argv)!=4:
     print("Usage: %s DROPBOX_API_TOKEN PROMETHEUS_ALIAS PATH_ON_DROPBOX" % (sys.argv[0]))
