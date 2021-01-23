@@ -11,10 +11,11 @@ python3 -m pip install -r requirements.txt
 
 ## Usage
 ```
-./ddc.py DROPBOX_API_TOKEN PATH_ON_DROPBOX
+./ddc.py DROPBOX_API_TOKEN PROMETHEUS_ALIAS PATH_ON_DROPBOX
 ```
 
 * `PATH_ON_DROPBOX` is full path to directory on Dropbox, eg. `"/Applications/Duplicati backup/COMPUTER_ONE/C_DRIVE"`
+* `PROMETHEUS_ALIAS` is any ASCII alphanumeric string that'll be appended as metric sufix
 * `DROPBOX_API_TOKEN` is non-expiring read-only token to Dropbox API
 
 ### How to generate `DROPBOX_API_TOKEN`
@@ -40,5 +41,6 @@ It was created with cron daily execution in mind that stores files consumed by `
 
 ### Example output
 ```
-dropbox_duplicati_latest_file{"/Applications/Duplicati backup/COMPUTER_ONE/C_DRIVE"} 1611363686
+$ ./ddc.py XXXXXXXXXXXXXXXXXXXXXXXX ComputerOneCDrive "/Applications/Duplicati backup/COMPUTER_ONE/C_DRIVE"
+dropbox_duplicati_latest_file_ComputerOneCDrive 1611363686
 ```
